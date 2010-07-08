@@ -6,6 +6,6 @@ Uses GeoPlugin.net to get Geographical location about an IP. Written to be used 
 
 Finding data is the same as any other models.
 
-To save data for an IP, do `$GeoLocatable->save($ip)`, or leave `$ip` null to use current request IP.
+To save data for an IP, do `$GeoLocatable->saveIp($ip)`, or leave `$ip` null to use current request IP.
 
 Geo data is cached for 12 hours by default, to change this change geo_locatable/libs/settings.php
