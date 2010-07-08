@@ -58,6 +58,16 @@ class GeoLocatable extends GeoLocatableAppModel {
         App::import('Core', 'HttpSocket');
         $HttpSocket = new HttpSocket();
         $geo_data = unserialize($HttpSocket->get('http://www.geoplugin.net/php.gp', array('ip' => $ip)));
+        foreach (array('city', 'countryCode', 'regionName', 'regionCode') as $key) {
+            if (!isset($geo_data['geoplugin_' . $key]) || strlen($geo_data['geoplugin_' . $key]) === 0) {
+                $geo_data['geoplugin_' . $key] = '';
+            }
+        }
+        foreach (array('latitude', 'longitude') as $key) {
+            if (!isset($geo_data['geoplugin_' . $key]) || strlen($geo_data['geoplugin_' . $key]) === 0) {
+                $geo_data['geoplugin_' . $key] = 0;
+            }
+        }
         $geo_data = array(
             'GeoLocatable' => array(
                 'ip' => $ip
