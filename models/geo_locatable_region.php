@@ -2,7 +2,7 @@
 class GeoLocatableRegion extends GeoLocatableAppModel {
 
     var $hasMany = array(
-        'City' => array(
+        'GeoLocatableCity' => array(
             'className' => 'GeoLocatable.GeoLocatableCity',
             'foreignKey' => 'region_id'
         )

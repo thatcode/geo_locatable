@@ -2,7 +2,7 @@
 class GeoLocatableCity extends GeoLocatableAppModel {
 
     var $belongsTo = array(
-        'Region' => array(
+        'GeoLocatableRegion' => array(
             'className' => 'GeoLocatable.GeoLocatableRegion',
             'foreignKey' => 'region_id'
         )
