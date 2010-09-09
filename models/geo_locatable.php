@@ -1,5 +1,5 @@
 <?php
-App::import('Libs', 'GeoLocatable.Settings');
+Configure::load('GeoLocatable.config');
 class GeoLocatable extends GeoLocatableAppModel {
 
     var $actsAs = array('Convertable.Convertable' => array(
